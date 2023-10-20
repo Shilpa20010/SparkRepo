@@ -87,8 +87,8 @@ class MyTestCase(unittest.TestCase):
         self.product_df = self.spark.createDataFrame(data=self.productdata,schema=self.productschema)
         self.unique_df = self.spark.createDataFrame(data=self.uniquedata,schema=self.uniqueschema)
 
-    # def tearDownClass(self):
-    #     self.spark.stop()
+    def tearDown(self):
+        self.spark.stop()
 
 
     #Test for product location
